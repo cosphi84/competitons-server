@@ -9,7 +9,7 @@ APlikasi ini terdiri dari 2 bagian:
 
 ## Install Server
 
-Pastikan PC server sudah terinstall [https://nodejs.org/en/download](NodeJS)
+Pastikan PC server sudah terinstall [NodeJS](https://nodejs.org/en/download)
 
 Clone repository ini dengan peritah:
 
