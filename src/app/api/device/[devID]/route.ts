@@ -1,6 +1,6 @@
 // src/app/api/device/[devID]/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import prisma from "@/lib/prisma"; // sesuaikan dengan export-mu
+import prisma from "@/lib/prisma"; 
 
 // GET /api/device/[devID]
 export async function GET(
@@ -12,8 +12,6 @@ export async function GET(
   if (!devID) {
     return NextResponse.json({ error: "NoID" }, { status: 400 });
   }
-
-  // Jika id kamu di Prisma bertipe Int, ganti ke: where: { id: Number(devID) }
   const rec = await prisma.devices.findUnique({
     where: { id: devID },
     select: { name: true, number: true },
@@ -47,6 +45,7 @@ export async function POST(
   } catch (e: any) {
     return NextResponse.json(
       { error: "DB Error", detail: e.message },
+      
       { status: 500 }
     );
   }
